@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: c65369b7947ee1a45909f85b70772e72
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -7288477603683268055
+    second: Lock_1|Animation_ClockFace1_3
+  - first:
+      74: -5139011280334302675
+    second: Lock_1|Animation_ClockFace2_4
+  - first:
+      74: -6559587867877793965
+    second: Lock_1|Animation_ClockFace3_5
+  - first:
+      74: 8149795233251084334
+    second: Lock_1|Animation_ClockFace4_6
+  - first:
+      74: 2245713522342066700
+    second: Lock_1|Animation_ClockFace5_2
+  - first:
+      74: -3336265904496432405
+    second: Lock_1|Animation_Lock_1
+  - first:
+      74: -6788745493731551322
+    second: ClockFace5_2|Animation_ClockFace1_3
+  - first:
+      74: -7950784909969051748
+    second: ClockFace5_2|Animation_ClockFace2_4
+  - first:
+      74: -4482629110167558370
+    second: ClockFace5_2|Animation_ClockFace3_5
+  - first:
+      74: -9027054601671790706
+    second: ClockFace5_2|Animation_ClockFace4_6
+  - first:
+      74: 1972380659089078401
+    second: ClockFace5_2|Animation_ClockFace5_2
+  - first:
+      74: -3958229613068723571
+    second: ClockFace5_2|Animation_Lock_1
+  - first:
+      74: 1330468444159694063
+    second: ClockFace1_3|Animation_ClockFace1_3
+  - first:
+      74: -471739645186701960
+    second: ClockFace1_3|Animation_ClockFace2_4
+  - first:
+      74: 1664052246713280534
+    second: ClockFace1_3|Animation_ClockFace3_5
+  - first:
+      74: 6559891809585525923
+    second: ClockFace1_3|Animation_ClockFace4_6
+  - first:
+      74: -6445742730705208257
+    second: ClockFace1_3|Animation_ClockFace5_2
+  - first:
+      74: -3493432521283415953
+    second: ClockFace1_3|Animation_Lock_1
+  - first:
+      74: 6311575336359427917
+    second: ClockFace2_4|Animation_ClockFace1_3
+  - first:
+      74: -7648988732572472305
+    second: ClockFace2_4|Animation_ClockFace2_4
+  - first:
+      74: -7925345151963535349
+    second: ClockFace2_4|Animation_ClockFace3_5
+  - first:
+      74: -6216349060601500613
+    second: ClockFace2_4|Animation_ClockFace4_6
+  - first:
+      74: 1470174023644056568
+    second: ClockFace2_4|Animation_ClockFace5_2
+  - first:
+      74: -475691419405979628
+    second: ClockFace2_4|Animation_Lock_1
+  - first:
+      74: 6917859685589983188
+    second: ClockFace3_5|Animation_ClockFace1_3
+  - first:
+      74: 3326897779561979303
+    second: ClockFace3_5|Animation_ClockFace2_4
+  - first:
+      74: -4189023746512550335
+    second: ClockFace3_5|Animation_ClockFace3_5
+  - first:
+      74: 5646800382998393850
+    second: ClockFace3_5|Animation_ClockFace4_6
+  - first:
+      74: -5911551338945638338
+    second: ClockFace3_5|Animation_ClockFace5_2
+  - first:
+      74: -5600331066804594883
+    second: ClockFace3_5|Animation_Lock_1
+  - first:
+      74: -412049720539790500
+    second: ClockFace4_6|Animation_ClockFace1_3
+  - first:
+      74: -4212826003531840067
+    second: ClockFace4_6|Animation_ClockFace2_4
+  - first:
+      74: -2713302885024763227
+    second: ClockFace4_6|Animation_ClockFace3_5
+  - first:
+      74: 1229349374795142957
+    second: ClockFace4_6|Animation_ClockFace4_6
+  - first:
+      74: -4139836668644215454
+    second: ClockFace4_6|Animation_ClockFace5_2
+  - first:
+      74: -4939695217643664595
+    second: ClockFace4_6|Animation_Lock_1
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

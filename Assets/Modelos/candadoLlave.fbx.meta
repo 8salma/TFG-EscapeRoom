@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: c9ba9a2f957494744890e74e2336140c
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -8364603814907751888
+    second: polySurface6|Animation_ClockFace1_3
+  - first:
+      74: -4948795237511496203
+    second: polySurface6|Animation_ClockFace2_4
+  - first:
+      74: -1586742195881879174
+    second: polySurface6|Animation_ClockFace3_5
+  - first:
+      74: 7231519823115735053
+    second: polySurface6|Animation_ClockFace4_6
+  - first:
+      74: 456156146618278476
+    second: polySurface6|Animation_ClockFace5_2
+  - first:
+      74: -1438902008613835829
+    second: polySurface6|Animation_Lock_1
+  - first:
+      74: 7677249751897161084
+    second: polySurface6|lockHover_lock
+  - first:
+      74: -3955233815268397953
+    second: polySurface6|lockHover_lock.001
+  - first:
+      74: -218526304854362946
+    second: polySurface6|lockHover_lock.002
+  - first:
+      74: -8720992855437088511
+    second: polySurface6|lockHover_pref_lock_part
+  - first:
+      74: -117971106456222771
+    second: polySurface6|lockHover_pref_lock_part.001
+  - first:
+      74: -9113533529154918908
+    second: polySurface6|lockHover_pref_lock_part.002
+  - first:
+      74: 5634052698108587352
+    second: polySurface6|lockUnlock_lock
+  - first:
+      74: -8525161506714955596
+    second: polySurface6|lockUnlock_lock.001
+  - first:
+      74: -5393910909831476975
+    second: polySurface6|lockUnlock_lock.002
+  - first:
+      74: 3903488628813988199
+    second: polySurface6|lockUnlock_pref_lock_part
+  - first:
+      74: -311589343446097490
+    second: polySurface6|lockUnlock_pref_lock_part.001
+  - first:
+      74: 8529404093552156126
+    second: polySurface6|lockUnlock_pref_lock_part.002
+  - first:
+      74: 651254133839344259
+    second: polySurface6|Take 001_camera1
+  - first:
+      74: 2437033100553106328
+    second: polySurface6|Take 001_polySurface6
+  - first:
+      74: 6591403092010166448
+    second: polySurface6|Take 001_polySurface7
+  - first:
+      74: 5235022121761273180
+    second: polySurface6|Take 001_polySurface8
+  - first:
+      74: -3207520806142299846
+    second: polySurface6|Take 001_pPipe1
+  - first:
+      74: 4477871723076256538
+    second: polySurface6|Take 001_pSphere1
+  - first:
+      74: 1207497421355560877
+    second: polySurface6|Take 001_pTorus2
+  - first:
+      74: -5624989022931144361
+    second: polySurface6|Take 001_pTorus3
+  - first:
+      74: 4926945497697950686
+    second: polySurface7|Animation_ClockFace1_3
+  - first:
+      74: 1178969194745532341
+    second: polySurface7|Animation_ClockFace2_4
+  - first:
+      74: 2766489804791265961
+    second: polySurface7|Animation_ClockFace3_5
+  - first:
+      74: 8731482554147275031
+    second: polySurface7|Animation_ClockFace4_6
+  - first:
+      74: -3872819330658580814
+    second: polySurface7|Animation_ClockFace5_2
+  - first:
+      74: 5381796648921570579
+    second: polySurface7|Animation_Lock_1
+  - first:
+      74: 8272438005506965318
+    second: polySurface7|lockHover_lock
+  - first:
+      74: 5351012786341930442
+    second: polySurface7|lockHover_lock.001
+  - first:
+      74: 8201507908108674545
+    second: polySurface7|lockHover_lock.002
+  - first:
+      74: -4591400770681975544
+    second: polySurface7|lockHover_pref_lock_part
+  - first:
+      74: 5280756342946391012
+    second: polySurface7|lockHover_pref_lock_part.001
+  - first:
+      74: 2153734584383044296
+    second: polySurface7|lockHover_pref_lock_part.002
+  - first:
+      74: -2257716272382862209
+    second: polySurface7|lockUnlock_lock
+  - first:
+      74: -5114059314637176861
+    second: polySurface7|lockUnlock_lock.001
+  - first:
+      74: -3260223052209860528
+    second: polySurface7|lockUnlock_lock.002
+  - first:
+      74: 4400074463500304281
+    second: polySurface7|lockUnlock_pref_lock_part
+  - first:
+      74: -3382938944130454424
+    second: polySurface7|lockUnlock_pref_lock_part.001
+  - first:
+      74: -6239638502002486711
+    second: polySurface7|lockUnlock_pref_lock_part.002
+  - first:
+      74: -75852454538917581
+    second: polySurface7|Take 001_camera1
+  - first:
+      74: -3580782083928957094
+    second: polySurface7|Take 001_polySurface6
+  - first:
+      74: -2238621160178041865
+    second: polySurface7|Take 001_polySurface7
+  - first:
+      74: 3828939862009802265
+    second: polySurface7|Take 001_polySurface8
+  - first:
+      74: -9064249887216141360
+    second: polySurface7|Take 001_pPipe1
+  - first:
+      74: -2865887463329535131
+    second: polySurface7|Take 001_pSphere1
+  - first:
+      74: 5125407488287774042
+    second: polySurface7|Take 001_pTorus2
+  - first:
+      74: 8557840180071822997
+    second: polySurface7|Take 001_pTorus3
+  - first:
+      74: -5889854969290701955
+    second: polySurface8|Animation_ClockFace1_3
+  - first:
+      74: -6823311299716142580
+    second: polySurface8|Animation_ClockFace2_4
+  - first:
+      74: 6058089442575395257
+    second: polySurface8|Animation_ClockFace3_5
+  - first:
+      74: 238422781288387213
+    second: polySurface8|Animation_ClockFace4_6
+  - first:
+      74: 2760722573878238489
+    second: polySurface8|Animation_ClockFace5_2
+  - first:
+      74: 2556307865318884253
+    second: polySurface8|Animation_Lock_1
+  - first:
+      74: -8792504806169957661
+    second: polySurface8|lockHover_lock
+  - first:
+      74: 7327566262713139904
+    second: polySurface8|lockHover_lock.001
+  - first:
+      74: -8760566985727647413
+    second: polySurface8|lockHover_lock.002
+  - first:
+      74: 1861698011511967004
+    second: polySurface8|lockHover_pref_lock_part
+  - first:
+      74: -2684387484486384876
+    second: polySurface8|lockHover_pref_lock_part.001
+  - first:
+      74: -7469698609489363870
+    second: polySurface8|lockHover_pref_lock_part.002
+  - first:
+      74: 2469301473267824468
+    second: polySurface8|lockUnlock_lock
+  - first:
+      74: 7542873098786786440
+    second: polySurface8|lockUnlock_lock.001
+  - first:
+      74: -7164107791725423313
+    second: polySurface8|lockUnlock_lock.002
+  - first:
+      74: 7074010953509059105
+    second: polySurface8|lockUnlock_pref_lock_part
+  - first:
+      74: -7048248309451965797
+    second: polySurface8|lockUnlock_pref_lock_part.001
+  - first:
+      74: -5908104153273753393
+    second: polySurface8|lockUnlock_pref_lock_part.002
+  - first:
+      74: -4748319629056399176
+    second: polySurface8|Take 001_camera1
+  - first:
+      74: 4914128756671702279
+    second: polySurface8|Take 001_polySurface6
+  - first:
+      74: -5686325032837237425
+    second: polySurface8|Take 001_polySurface7
+  - first:
+      74: 4830163263871745334
+    second: polySurface8|Take 001_polySurface8
+  - first:
+      74: -8525305206490116796
+    second: polySurface8|Take 001_pPipe1
+  - first:
+      74: -8280904178839441957
+    second: polySurface8|Take 001_pSphere1
+  - first:
+      74: 6094051910017997858
+    second: polySurface8|Take 001_pTorus2
+  - first:
+      74: -4760660766680455150
+    second: polySurface8|Take 001_pTorus3
+  - first:
+      74: -3499687145214387647
+    second: pPipe1|Animation_ClockFace1_3
+  - first:
+      74: -6287371103707522287
+    second: pPipe1|Animation_ClockFace2_4
+  - first:
+      74: 3244289202215364208
+    second: pPipe1|Animation_ClockFace3_5
+  - first:
+      74: -8630620808273772673
+    second: pPipe1|Animation_ClockFace4_6
+  - first:
+      74: 8716182857612090248
+    second: pPipe1|Animation_ClockFace5_2
+  - first:
+      74: -181130573300012815
+    second: pPipe1|Animation_Lock_1
+  - first:
+      74: -7810308939044003922
+    second: pPipe1|lockHover_lock
+  - first:
+      74: 2181159851124545007
+    second: pPipe1|lockHover_lock.001
+  - first:
+      74: 941253029711221606
+    second: pPipe1|lockHover_lock.002
+  - first:
+      74: -5736355630830496694
+    second: pPipe1|lockHover_pref_lock_part
+  - first:
+      74: 7069047349983367031
+    second: pPipe1|lockHover_pref_lock_part.001
+  - first:
+      74: 6775242447423565752
+    second: pPipe1|lockHover_pref_lock_part.002
+  - first:
+      74: -652296507161399288
+    second: pPipe1|lockUnlock_lock
+  - first:
+      74: 6797625935279629387
+    second: pPipe1|lockUnlock_lock.001
+  - first:
+      74: -8064466916869832781
+    second: pPipe1|lockUnlock_lock.002
+  - first:
+      74: -4239546072286463034
+    second: pPipe1|lockUnlock_pref_lock_part
+  - first:
+      74: -7201838970805383906
+    second: pPipe1|lockUnlock_pref_lock_part.001
+  - first:
+      74: -6624722251819200571
+    second: pPipe1|lockUnlock_pref_lock_part.002
+  - first:
+      74: -741216473549861014
+    second: pPipe1|Take 001_camera1
+  - first:
+      74: -3499742967497642600
+    second: pPipe1|Take 001_polySurface6
+  - first:
+      74: 6952615948839710641
+    second: pPipe1|Take 001_polySurface7
+  - first:
+      74: 3971557701699719939
+    second: pPipe1|Take 001_polySurface8
+  - first:
+      74: -8777302677860820916
+    second: pPipe1|Take 001_pPipe1
+  - first:
+      74: 1548492140772341101
+    second: pPipe1|Take 001_pSphere1
+  - first:
+      74: 4082928281420152564
+    second: pPipe1|Take 001_pTorus2
+  - first:
+      74: 4006045796531367163
+    second: pPipe1|Take 001_pTorus3
+  - first:
+      74: 7882473837893653017
+    second: camera1|Animation_ClockFace1_3
+  - first:
+      74: -3368618707989787422
+    second: camera1|Animation_ClockFace2_4
+  - first:
+      74: -7038559786665018098
+    second: camera1|Animation_ClockFace3_5
+  - first:
+      74: -2425788909494825860
+    second: camera1|Animation_ClockFace4_6
+  - first:
+      74: -1406758063132422080
+    second: camera1|Animation_ClockFace5_2
+  - first:
+      74: -3647152993110225765
+    second: camera1|Animation_Lock_1
+  - first:
+      74: 5317601065357124668
+    second: camera1|lockHover_lock
+  - first:
+      74: -4729210271834077850
+    second: camera1|lockHover_lock.001
+  - first:
+      74: -5000550434704604650
+    second: camera1|lockHover_lock.002
+  - first:
+      74: 1944933240634169372
+    second: camera1|lockHover_pref_lock_part
+  - first:
+      74: -3828663446245434304
+    second: camera1|lockHover_pref_lock_part.001
+  - first:
+      74: -8958695623763821075
+    second: camera1|lockHover_pref_lock_part.002
+  - first:
+      74: -2069698824470204609
+    second: camera1|lockUnlock_lock
+  - first:
+      74: 8863825588172856373
+    second: camera1|lockUnlock_lock.001
+  - first:
+      74: 1303822559798098296
+    second: camera1|lockUnlock_lock.002
+  - first:
+      74: -6140722688584519697
+    second: camera1|lockUnlock_pref_lock_part
+  - first:
+      74: 4396324588954639606
+    second: camera1|lockUnlock_pref_lock_part.001
+  - first:
+      74: -3991099939730765879
+    second: camera1|lockUnlock_pref_lock_part.002
+  - first:
+      74: -4733486399506981591
+    second: camera1|Take 001_camera1
+  - first:
+      74: 6252384270709311081
+    second: camera1|Take 001_polySurface6
+  - first:
+      74: -5276692571729978598
+    second: camera1|Take 001_polySurface7
+  - first:
+      74: -8180095310548064922
+    second: camera1|Take 001_polySurface8
+  - first:
+      74: -7078805873682294376
+    second: camera1|Take 001_pPipe1
+  - first:
+      74: 2791649964129091420
+    second: camera1|Take 001_pSphere1
+  - first:
+      74: 7411089746915614752
+    second: camera1|Take 001_pTorus2
+  - first:
+      74: 270687761133160648
+    second: camera1|Take 001_pTorus3
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

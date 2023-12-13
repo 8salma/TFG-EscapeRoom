@@ -1,0 +1,5 @@
+
+-   LLAVES         
+objeto.transform.localPosition = new Vector3(0.96f, -0.654f, 1.279f);
+objeto.transform.localEulerAngles = new Vector3(-88.85201f, 0f, 17.522f);
+objeto.transform.localScale = new Vector3(176.5799f, 176.5799f, 176.5799f);

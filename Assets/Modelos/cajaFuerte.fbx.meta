@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: d1f979b00ec22f84ca90c0fb5d594104
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 7102240919578622276
+    second: Object_5|Animation_ClockFace1_3
+  - first:
+      74: 168684247283138787
+    second: Object_5|Animation_ClockFace2_4
+  - first:
+      74: 7509481921452370822
+    second: Object_5|Animation_ClockFace3_5
+  - first:
+      74: 243628958222134957
+    second: Object_5|Animation_ClockFace4_6
+  - first:
+      74: 4713193405267051698
+    second: Object_5|Animation_ClockFace5_2
+  - first:
+      74: 8773788606275569857
+    second: Object_5|Animation_Lock_1
+  - first:
+      74: 1804832461656634889
+    second: Object_5|lockHover_lock
+  - first:
+      74: 2082283122252755499
+    second: Object_5|lockHover_lock.001
+  - first:
+      74: -3574446250972081045
+    second: Object_5|lockHover_lock.002
+  - first:
+      74: 2592905231613944493
+    second: Object_5|lockHover_pref_lock_part
+  - first:
+      74: -6445284548636004965
+    second: Object_5|lockHover_pref_lock_part.001
+  - first:
+      74: 2903694135760907132
+    second: Object_5|lockHover_pref_lock_part.002
+  - first:
+      74: 6800200085095311364
+    second: Object_5|lockUnlock_lock
+  - first:
+      74: 6997121267795609952
+    second: Object_5|lockUnlock_lock.001
+  - first:
+      74: -2948399488946949818
+    second: Object_5|lockUnlock_lock.002
+  - first:
+      74: -3066909854516646126
+    second: Object_5|lockUnlock_pref_lock_part
+  - first:
+      74: 7601045370725648062
+    second: Object_5|lockUnlock_pref_lock_part.001
+  - first:
+      74: 5382660722546622394
+    second: Object_5|lockUnlock_pref_lock_part.002
+  - first:
+      74: -7104045678163716323
+    second: Object_5|SafeSkeleton|SafeOpen_Object_5
+  - first:
+      74: 7262304652697811787
+    second: Object_5|Take 001_camera1
+  - first:
+      74: 2895031437315705389
+    second: Object_5|Take 001_polySurface6
+  - first:
+      74: 1627491106076443598
+    second: Object_5|Take 001_polySurface7
+  - first:
+      74: -315527980537861232
+    second: Object_5|Take 001_polySurface8
+  - first:
+      74: -3749954971731443120
+    second: Object_5|Take 001_pPipe1
+  - first:
+      74: -4543369110425677675
+    second: Object_5|Take 001_pSphere1
+  - first:
+      74: -8118971969161780767
+    second: Object_5|Take 001_pTorus2
+  - first:
+      74: -6525437576271314009
+    second: Object_5|Take 001_pTorus3
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
