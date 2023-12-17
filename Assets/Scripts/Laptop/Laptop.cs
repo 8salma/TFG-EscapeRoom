@@ -15,9 +15,6 @@ public class Laptop : MonoBehaviour
     public GameObject canvasSecreto;
     public GameObject canvasPrincipal;
     public GameObject fallo;
-    public GameObject salir;
-    public GameObject interactuar;
-    public GameObject puntero;
 
     // Otras variables de control
     bool dentroPortatil = false;
@@ -65,10 +62,7 @@ public class Laptop : MonoBehaviour
         // activamos canvas del portatil
         canvasPortatil.SetActive(true);
 
-        salir.SetActive(true);
         fallo.SetActive(false);
-        puntero.SetActive(false);
-        interactuar.SetActive(false);
 
         // Bloquear movimiento del jugador
         player.GetComponent<PlayerController>().bloquear = true;
@@ -82,8 +76,6 @@ public class Laptop : MonoBehaviour
         // Cambio de cámara
         camaraLap.SetActive(true);
         camaraJugador.SetActive(false);
-
-        puntero.SetActive(true);
 
         // hacemos visible el cursor
         Cursor.lockState = CursorLockMode.None;
@@ -115,8 +107,6 @@ public class Laptop : MonoBehaviour
         // hacemos invisible el cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        puntero.SetActive(true);
 
         // desactivamos canvas del portatil
         canvasPortatil.SetActive(false);

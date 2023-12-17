@@ -28,14 +28,10 @@ public class Receta : MonoBehaviour
             camaraNota.SetActive(true);
             camaraJugador.SetActive(false);
 
-            // controladorCamara.GetComponent<CambiosCamara>().camaraNevera();
-
-            // hacemos visible el cursor
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
             // Bloquear movimiento del jugador
             player.GetComponent<PlayerController>().bloquear = true;
+
+            activa = false;
         }
 
         // Salir con Q
@@ -45,32 +41,8 @@ public class Receta : MonoBehaviour
             camaraNota.SetActive(false);
             camaraJugador.SetActive(true);
 
-            // hacemos invisible el cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
             // Desbloquear movimiento del jugador
             player.GetComponent<PlayerController>().bloquear = false;
-
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("candao sii");
-        if (other.tag == "Papaya")
-        {
-            activa = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("candao noo");
-
-        if (other.tag == "Papaya")
-        {
-            activa = false;
         }
     }
 }

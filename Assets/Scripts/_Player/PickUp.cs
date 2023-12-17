@@ -35,6 +35,13 @@ public class PickUp : MonoBehaviour
     private Transform highlight;
     private Transform selection;
 
+    [Header("Ticks de ingredientes")]
+    public GameObject harina;
+    public GameObject leche;
+    public GameObject levadura;
+    public GameObject huevos;
+    public GameObject azucar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +132,34 @@ public class PickUp : MonoBehaviour
             {
                 soltar.SetActive(true);
 
+                // HE COGIDO INGREDIENTE
+                // Harina
+                if (hit.transform.tag == "Harina")
+                {
+                    harina.SetActive(true);
+                }
+                // Leche
+                if (hit.transform.tag == "Leche")
+                {
+                    leche.SetActive(true);
+                }
+                // Levadura
+                if (hit.transform.tag == "Levadura")
+                {
+                    levadura.SetActive(true);
+                }
+                // Huevos
+                if (hit.transform.tag == "Huevos")
+                {
+                    huevos.SetActive(true);
+                }
+                // Azúcar
+                if (hit.transform.tag == "Azucar")
+                {
+                    azucar.SetActive(true);
+                }
+
+                // OTROS
                 // He cogido el mando de la tv
                 if (hit.transform.tag == "MandoTV")
                 {
@@ -329,16 +364,20 @@ public class PickUp : MonoBehaviour
                 }
             }
 
-            // Abrir cofre
+            // Cofre candado
             if (hit.collider.tag == "Cofre")
             {
-                // compruebo si tengo el mando en la mano, si tengo cambio de canal
-                if (objeto != null && objeto.transform.tag == "CerraduraCofre")
-                {
-                    hit.collider.transform.GetComponent<AbrirCofre>().abrir();
-                    soltar.SetActive(false);
-                    interactuar.SetActive(true);
-                }
+                hit.collider.transform.GetComponent<Candado>().activa = true;
+                highlight.gameObject.GetComponent<Outline>().enabled = false;
+                highlight = null;
+            }
+
+            // Ajedrez
+            if (hit.collider.tag == "TableroAjedrez")
+            {
+                hit.collider.transform.GetComponent<Ajedrez>().activa = true;
+                highlight.gameObject.GetComponent<Outline>().enabled = false;
+                highlight = null;
             }
 
             // Ver nota

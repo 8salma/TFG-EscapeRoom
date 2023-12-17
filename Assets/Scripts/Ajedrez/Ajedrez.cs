@@ -18,6 +18,8 @@ public class Ajedrez : MonoBehaviour
     public GameObject ajedrez;
     private GameObject pieza;
 
+    private int puesto = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,14 @@ public class Ajedrez : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && activa)
+        if (activa)
         {
             entrar();
         }
         // Salir con Q
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            salgo();
+            salir();
         }
     }
 
@@ -65,8 +67,9 @@ public class Ajedrez : MonoBehaviour
             }
 
             // posicionar en el tablero
-            pieza.transform.localPosition = new Vector3(8f, 0f, 1f);
+            pieza.transform.localPosition = new Vector3(8f, 0f, puesto);
             pieza.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+            puesto++;
 
             // habilitar drag
             pieza.GetComponent<Piezas>().enTablero = true;
@@ -83,6 +86,8 @@ public class Ajedrez : MonoBehaviour
 
             // ajustar escala
             pieza.transform.localScale = new Vector3(100f, 100f, 100f);
+
+            activa = false;
         }
         else
         {
@@ -98,10 +103,12 @@ public class Ajedrez : MonoBehaviour
 
             // Bloquear movimiento del jugador
             player.GetComponent<PlayerController>().bloquear = true;
+
+            activa = false;
         }
     }
 
-    public void salgo()
+    public void salir()
     {
         // Cambio de cámara
         camaraAjedrez.SetActive(false);
@@ -113,21 +120,5 @@ public class Ajedrez : MonoBehaviour
 
         // Desbloquear movimiento del jugador
         player.GetComponent<PlayerController>().bloquear = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Papaya")
-        {
-            activa = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Papaya")
-        {
-            activa = false;
-        }
     }
 }

@@ -20,55 +20,47 @@ public class Candado : MonoBehaviour
     void Update()
     {
         // Modo interacción con candado con click izquierdo
-        if (Input.GetMouseButton(0) && activa)
+        if (activa)
         {
-            // Cambio de cámara
-            camaraCandado.SetActive(true);
-            camaraJugador.SetActive(false);
-
-            // controladorCamara.GetComponent<CambiosCamara>().camaraNevera();
-
-            // hacemos visible el cursor
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            // Bloquear movimiento del jugador
-            player.GetComponent<PlayerController>().bloquear = true;
+            entrar();
         }
 
         // Salir con Q
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            // Cambio de cámara
-            camaraCandado.SetActive(false);
-            camaraJugador.SetActive(true);
-
-            // hacemos invisible el cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
-            // Desbloquear movimiento del jugador
-            player.GetComponent<PlayerController>().bloquear = false;
-
+            salir();
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void entrar()
     {
-        Debug.Log("candao sii");
-        if (other.tag == "Papaya")
-        {
-            activa = true;
-        }
-    }
+        // Cambio de cámara
+        camaraCandado.SetActive(true);
+        camaraJugador.SetActive(false);
 
-    private void OnTriggerExit(Collider other)
+        // controladorCamara.GetComponent<CambiosCamara>().camaraNevera();
+
+        // hacemos visible el cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Bloquear movimiento del jugador
+        player.GetComponent<PlayerController>().bloquear = true;
+
+        activa = false;
+    }
+    public void salir()
     {
-        Debug.Log("candao noo");
+        // Cambio de cámara
+        camaraCandado.SetActive(false);
+        camaraJugador.SetActive(true);
 
-        if (other.tag == "Papaya")
-        {
-            activa = false;
-        }
+        // hacemos invisible el cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // Desbloquear movimiento del jugador
+        player.GetComponent<PlayerController>().bloquear = false;
     }
+
 }

@@ -19,6 +19,7 @@ public class ContrasenaCandado : MonoBehaviour
     [Header("Variables de control")]
     private bool desbloqueado = false;
     public GameObject tapa;
+    bool abierto = false;
 
     [Header("Variables para abrir el cofre")]
     public float anguloTapaAbierta = -200.0f; // Ángulo de la tapa al estar abierta
@@ -42,33 +43,46 @@ public class ContrasenaCandado : MonoBehaviour
     void Update()
     {
         if (switch1.GetComponent<SwitchRueda>().numeroActual == password[0]
-        && switch2.GetComponent<SwitchRueda>().numeroActual == password[1]
-        && switch3.GetComponent<SwitchRueda>().numeroActual == password[2]
-        && switch4.GetComponent<SwitchRueda>().numeroActual == password[3]
-        && !desbloqueado)
+            && switch2.GetComponent<SwitchRueda>().numeroActual == password[1]
+            && switch3.GetComponent<SwitchRueda>().numeroActual == password[2]
+            && switch4.GetComponent<SwitchRueda>().numeroActual == password[3]
+            && !abierto) // Comprueba si el candado no está abierto
         {
-            Debug.Log("CANADO DESBLOQUEADO");
+            Debug.Log("CANDADO DESBLOQUEADO");
 
-            // SALIR MODO CANDADO
-            Quaternion targetRotation = Quaternion.Euler(anguloTapaAbierta, 0, 0);
-            tapa.transform.localRotation = Quaternion.Slerp(tapa.transform.localRotation, targetRotation, velocidad * Time.deltaTime);
-
-            // Cambio de cámara
-            camaraCandado.SetActive(false);
-            camaraJugador.SetActive(true);
-
-            // hacemos invisible el cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
-            // Desbloquear movimiento del jugador
-            player.GetComponent<PlayerController>().bloquear = false;
-
+            StartCoroutine(AbrirCandado());
         }
     }
 
-    private IEnumerator esperar()
+    IEnumerator AbrirCandado()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        // Indica que ya se está ejecutando la animación de apertura
+        abierto = true;
+
+        // salir del modo ver candado
+        tapa.GetComponent<Candado>().salir();
+
+        // Se guarda la rotación inicial del candado
+        Quaternion initialRotation = tapa.transform.localRotation;
+
+        // Define el ángulo objetivo de rotación (abrir el candado)
+        Quaternion targetRotation = Quaternion.Euler(anguloTapaAbierta, 0, 0);
+
+        float elapsedTime = 0f;
+        float duration = 1f; // Duración de la animación en segundos
+
+        while (elapsedTime < duration)
+        {
+            // Incrementa el tiempo transcurrido
+            elapsedTime += Time.deltaTime;
+
+            // Aplica una interpolación para la rotación gradual hacia el ángulo objetivo
+            tapa.transform.localRotation = Quaternion.Slerp(initialRotation, targetRotation, elapsedTime / duration);
+
+            yield return null; // Espera hasta el siguiente frame
+        }
+
+        tapa.tag = "NoCoger";
+        tapa.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 }

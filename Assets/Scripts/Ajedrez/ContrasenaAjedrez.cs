@@ -52,73 +52,42 @@ public class ContrasenaAjedrez : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!cajonDesbloqueado
-        && (alfilNegro1.transform.localPosition == new Vector3(2.0f, 0.0f, 7.0f)
-        && ((peonBlanco1.transform.localPosition == new Vector3(4.0f, 0.0f, 2.0f) && peonBlanco2.transform.localPosition == new Vector3(7.0f, 0.0f, 2.0f)) || (peonBlanco2.transform.localPosition == new Vector3(4.0f, 0.0f, 2.0f) && peonBlanco1.transform.localPosition == new Vector3(7.0f, 0.0f, 2.0f)))
-        && peonNegro1.transform.localPosition == new Vector3(1.0f, 0.0f, 6.0f)
-        && reinaBlanca.transform.localPosition == new Vector3(0.0f, 0.0f, 2.0f)
-        ))
+        if ((alfilNegro1.transform.localPosition == new Vector3(2.0f, 0.0f, 7.0f)
+            && ((peonBlanco1.transform.localPosition == new Vector3(4.0f, 0.0f, 2.0f) && peonBlanco2.transform.localPosition == new Vector3(7.0f, 0.0f, 2.0f)) || (peonBlanco2.transform.localPosition == new Vector3(4.0f, 0.0f, 2.0f) && peonBlanco1.transform.localPosition == new Vector3(7.0f, 0.0f, 2.0f)))
+            && peonNegro1.transform.localPosition == new Vector3(1.0f, 0.0f, 6.0f)
+            && reinaBlanca.transform.localPosition == new Vector3(0.0f, 0.0f, 2.0f)
+            && !cajonDesbloqueado))
         {
-            /*
             Debug.Log("AJEDREZ DESBLOQUEADO");
 
-            // SALIMOS DEL MODO AJEDREZ
-
-            // DESBLOQUEO DEL CAJON
-            cajon.transform.localPosition = Vector3.MoveTowards(cajon.transform.localPosition, posAbierto, Time.deltaTime * velocidad);
-
-            // triggerAjedrez.GetComponent<Collider>().SetActive(false);
-            // linea.GetComponent<OutlineSelection>().enabled = false;
-            // Destroy(camaraAjedrez);
-
-            camaraAjedrez.SetActive(false);
-            camaraJugador.SetActive(true);
-
-            // hacemos invisible el cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
-            ajedrez.GetComponent<Ajedrez>().salgo();
-            // ya no interactuo con el ajedrez
-            ajedrez.GetComponent<BoxCollider>().enabled = false;
-
-            // Desbloquear movimiento del jugador
-            player.GetComponent<PlayerController>().bloquear = false;
-
-            //cajonDesbloqueado = true;
-
-
-*/
-
-            Debug.Log("AJEDREZ DESBLOQUEADO");
-
-            // SALIR MODO CANDADO
-            cajon.transform.localPosition = Vector3.MoveTowards(cajon.transform.localPosition, posAbierto, Time.deltaTime * velocidad);
-
-            // Cambio de cámara
-            camaraAjedrez.SetActive(false);
-            camaraJugador.SetActive(true);
-
-            // hacemos invisible el cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
-            // cambios canvas
-            mover.SetActive(false);
-            salir.SetActive(false);
-
-            // cambio tags
-            ajedrez.tag = "NoCoger";
-            ajedrez.layer = LayerMask.NameToLayer("Ignore Raycast");
-
-            // Desbloquear movimiento del jugador
-            player.GetComponent<PlayerController>().bloquear = false;
-
+            StartCoroutine(AbrirCajon());
         }
     }
 
-    void desbloquearCajon()
+    IEnumerator AbrirCajon()
     {
+        cajonDesbloqueado = true;
 
+        Vector3 initialPosition = cajon.transform.localPosition;
+        float elapsedTime = 0f;
+        float duration = 1f; // Duración de la animación en segundos
+        Vector3 targetPosition = posAbierto; // Definir la posición objetivo del cajón abierto
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Interpolar gradualmente la posición del cajón hacia el objetivo
+            cajon.transform.localPosition = Vector3.Lerp(initialPosition, targetPosition, elapsedTime / duration);
+
+            yield return null; // Esperar al siguiente frame
+        }
+
+        // salir del modo ver tablero
+        ajedrez.GetComponent<Ajedrez>().salir();
+
+        // Cambiar tags y capas
+        ajedrez.tag = "NoCoger";
+        ajedrez.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 }

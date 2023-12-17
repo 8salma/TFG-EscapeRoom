@@ -36,6 +36,11 @@ TagManager:
   - Ingrediente
   - Libro
   - Nota
+  - Azucar
+  - Huevos
+  - Harina
+  - Leche
+  - Levadura
   layers:
   - Default
   - TransparentFX
