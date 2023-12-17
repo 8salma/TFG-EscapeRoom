@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Candado : MonoBehaviour
+public class Receta : MonoBehaviour
 {
     public bool activa;
-    public GameObject camaraCandado;
+    public GameObject camaraNota;
     public GameObject camaraJugador;
     // public GameObject controladorCamara;
     public GameObject player;
+    public GameObject interactuar;
+    public GameObject salir;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,10 @@ public class Candado : MonoBehaviour
     void Update()
     {
         // Modo interacción con candado con click izquierdo
-        if (Input.GetMouseButton(0) && activa)
+        if (activa)
         {
             // Cambio de cámara
-            camaraCandado.SetActive(true);
+            camaraNota.SetActive(true);
             camaraJugador.SetActive(false);
 
             // controladorCamara.GetComponent<CambiosCamara>().camaraNevera();
@@ -40,7 +42,7 @@ public class Candado : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             // Cambio de cámara
-            camaraCandado.SetActive(false);
+            camaraNota.SetActive(false);
             camaraJugador.SetActive(true);
 
             // hacemos invisible el cursor

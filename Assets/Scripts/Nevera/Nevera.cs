@@ -12,9 +12,6 @@ public class Nevera : MonoBehaviour
     public bool activa;
     public GameObject camaraNevera;
     public GameObject camaraJugador;
-    public GameObject mover;
-    public GameObject salir;
-    public GameObject interactuar;
 
     // public GameObject controladorCamara;
     public GameObject player;
@@ -51,11 +48,6 @@ public class Nevera : MonoBehaviour
         // Cambio de cámara
         camaraNevera.SetActive(true);
         camaraJugador.SetActive(false);
-
-        // Cambios del canvas
-        mover.SetActive(true);
-        salir.SetActive(true);
-        interactuar.SetActive(false);
 
         // controladorCamara.GetComponent<CambiosCamara>().camaraNevera();
 

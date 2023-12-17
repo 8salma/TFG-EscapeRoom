@@ -12,10 +12,7 @@ public class Ajedrez : MonoBehaviour
     public bool activa;
     public GameObject camaraAjedrez;
     public GameObject camaraJugador;
-    public GameObject mover;
-    public GameObject salir;
-    public GameObject soltar;
-    public GameObject interactuar;
+
     // public GameObject controladorCamara;
     public GameObject player;
     public GameObject ajedrez;
@@ -93,12 +90,6 @@ public class Ajedrez : MonoBehaviour
             camaraAjedrez.SetActive(true);
             camaraJugador.SetActive(false);
 
-            // cambios canvas
-            mover.SetActive(true);
-            salir.SetActive(true);
-            interactuar.SetActive(false);
-            soltar.SetActive(false);
-
             // controladorCamara.GetComponent<CambiosCamara>().camaraAjedrez();
 
             // hacemos visible el cursor
@@ -115,9 +106,6 @@ public class Ajedrez : MonoBehaviour
         // Cambio de cámara
         camaraAjedrez.SetActive(false);
         camaraJugador.SetActive(true);
-
-        mover.SetActive(false);
-        salir.SetActive(false);
 
         // hacemos invisible el cursor
         Cursor.lockState = CursorLockMode.Locked;

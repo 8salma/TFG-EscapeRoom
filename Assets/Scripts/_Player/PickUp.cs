@@ -118,7 +118,7 @@ public class PickUp : MonoBehaviour
             && hit.transform.tag != "Dimmer" && hit.collider.tag != "PuertaMuebleAlto" && hit.collider.tag != "PuertaImanes"
             && hit.transform.tag != "TableroAjedrez" && hit.transform.tag != "Interruptor" && hit.transform.tag != "TV"
             && hit.transform.tag != "Portatil" && hit.transform.tag != "Candado" && hit.transform.tag != "Jarron"
-            && hit.transform.tag != "Cofre"
+            && hit.transform.tag != "Cofre" && hit.transform.tag != "Nota"
 
             && (hit.transform.gameObject.layer == LayerMask.NameToLayer("ObjetoInteractivo") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Llave"))
             && !cogido)
@@ -205,6 +205,13 @@ public class PickUp : MonoBehaviour
                 {
                     objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
                     objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
+
+                else if (hit.transform.tag == "Libro")
+                {
+                    objeto.transform.localPosition = new Vector3(0.792f, -0.701f, 1.169f);
+                    objeto.transform.localEulerAngles = new Vector3(526.559f, 225.28f, -175.118f);
                 }
 
                 cogido = true;
@@ -333,12 +340,24 @@ public class PickUp : MonoBehaviour
                     interactuar.SetActive(true);
                 }
             }
+
+            // Ver nota
+            if (hit.collider.tag == "Nota")
+            {
+                hit.collider.transform.GetComponent<Receta>().activa = true;
+                highlight.gameObject.GetComponent<Outline>().enabled = false;
+                highlight = null;
+            }
         }
     }
 
     void Soltar()
     {
+        float maxDistance = 3f;
+
         objeto.transform.parent = null;
+
+        // Activa los colliders y desactiva la cinemática del Rigidbody
         foreach (var c in objeto.GetComponentsInChildren<Collider>())
         {
             if (c != null)
@@ -354,6 +373,7 @@ public class PickUp : MonoBehaviour
                 r.isKinematic = false;
             }
         }
+
         cogido = false;
 
         player.GetComponent<PlayerController>().tengoMando = false;
@@ -361,9 +381,21 @@ public class PickUp : MonoBehaviour
         player.GetComponent<PlayerController>().tengoPieza = false;
         player.GetComponent<PlayerController>().tagLlave = "";
 
-        RaycastHit hitDown;
-        Physics.Raycast(transform.position, -Vector3.up, out hitDown);
-        // objeto.transform.position = hitDown.point + new Vector3(transform.forward.x, 0, transform.forward.z);
+        // Dispara un rayo desde el centro de la cámara hacia adelante
+        Camera mainCamera = Camera.main;
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // Punto central de la pantalla
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, maxDistance))
+        {
+            // Si el rayo golpea algo en el mundo dentro de la distancia máxima, establece la posición del objeto al punto de impacto
+            objeto.transform.position = hit.point;
+        }
+        else
+        {
+            // Si no hay impacto dentro de la distancia máxima, establece la posición del objeto al final del rayo
+            objeto.transform.position = ray.GetPoint(maxDistance);
+        }
     }
 
     void Inspeccionar()
