@@ -21,6 +21,7 @@ public class PickUp : MonoBehaviour
     [Header("Canvas")]
     public GameObject interactuar;
     public GameObject soltar;
+    public GameObject echar;
 
     [Header("Inspección")]
     private GameObject objetoInspeccion;
@@ -99,7 +100,6 @@ public class PickUp : MonoBehaviour
         if (Input.GetKeyDown("q") && cogido)
         {
             Soltar();
-            objeto = null;
         }
         if (Input.GetKeyDown("e"))
         {
@@ -125,7 +125,7 @@ public class PickUp : MonoBehaviour
             && hit.transform.tag != "Dimmer" && hit.collider.tag != "PuertaMuebleAlto" && hit.collider.tag != "PuertaImanes"
             && hit.transform.tag != "TableroAjedrez" && hit.transform.tag != "Interruptor" && hit.transform.tag != "TV"
             && hit.transform.tag != "Portatil" && hit.transform.tag != "Candado" && hit.transform.tag != "Jarron"
-            && hit.transform.tag != "Cofre" && hit.transform.tag != "Nota"
+            && hit.transform.tag != "Cofre" && hit.transform.tag != "Nota" && hit.transform.tag != "Cuenco"
 
             && (hit.transform.gameObject.layer == LayerMask.NameToLayer("ObjetoInteractivo") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Llave"))
             && !cogido)
@@ -137,26 +137,31 @@ public class PickUp : MonoBehaviour
                 if (hit.transform.tag == "Harina")
                 {
                     harina.SetActive(true);
+                    player.GetComponent<PlayerController>().tengoIngrediente = true;
                 }
                 // Leche
                 if (hit.transform.tag == "Leche")
                 {
                     leche.SetActive(true);
+                    player.GetComponent<PlayerController>().tengoIngrediente = true;
                 }
                 // Levadura
                 if (hit.transform.tag == "Levadura")
                 {
                     levadura.SetActive(true);
+                    player.GetComponent<PlayerController>().tengoIngrediente = true;
                 }
                 // Huevos
                 if (hit.transform.tag == "Huevos")
                 {
                     huevos.SetActive(true);
+                    player.GetComponent<PlayerController>().tengoIngrediente = true;
                 }
                 // Azúcar
                 if (hit.transform.tag == "Azucar")
                 {
                     azucar.SetActive(true);
+                    player.GetComponent<PlayerController>().tengoIngrediente = true;
                 }
 
                 // OTROS
@@ -236,18 +241,43 @@ public class PickUp : MonoBehaviour
                     objeto.transform.localEulerAngles = new Vector3(-164.011f, -19.008f, 202.118f);
                 }
 
-                else if (hit.transform.tag == "Ingrediente")
-                {
-                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
-                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
-                }
-
-
                 else if (hit.transform.tag == "Libro")
                 {
                     objeto.transform.localPosition = new Vector3(0.792f, -0.701f, 1.169f);
                     objeto.transform.localEulerAngles = new Vector3(526.559f, 225.28f, -175.118f);
                 }
+
+                // INGREDIENTES
+                else if (hit.transform.tag == "Leche")
+                {
+                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
+                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
+                else if (hit.transform.tag == "Harina")
+                {
+                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
+                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
+                else if (hit.transform.tag == "Levadura")
+                {
+                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
+                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
+                else if (hit.transform.tag == "Azucar")
+                {
+                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
+                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
+                else if (hit.transform.tag == "Huevos")
+                {
+                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
+                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                }
+
 
                 cogido = true;
             }
@@ -387,12 +417,29 @@ public class PickUp : MonoBehaviour
                 highlight.gameObject.GetComponent<Outline>().enabled = false;
                 highlight = null;
             }
+
+            // Sistema Ingredientes
+            // Abrir puerta nevera
+            if (hit.collider.tag == "Cuenco")
+            {
+                // compruebo si tengo la llave de la nevera
+                if (player.GetComponent<PlayerController>().tengoIngrediente)
+                {
+                    hit.collider.transform.GetComponent<Cuenco>().contador++;
+
+                    // destruimos el ingrediente
+                    Destroy(objeto);
+                    objeto = null;
+                    player.GetComponent<PlayerController>().tengoIngrediente = false;
+                    cogido = false;
+                }
+            }
         }
     }
 
     void Soltar()
     {
-        float maxDistance = 3f;
+        float maxDistance = 2f;
 
         objeto.transform.parent = null;
 
@@ -418,6 +465,7 @@ public class PickUp : MonoBehaviour
         player.GetComponent<PlayerController>().tengoMando = false;
         player.GetComponent<PlayerController>().tengoLlave = false;
         player.GetComponent<PlayerController>().tengoPieza = false;
+        player.GetComponent<PlayerController>().tengoIngrediente = false;
         player.GetComponent<PlayerController>().tagLlave = "";
 
         // Dispara un rayo desde el centro de la cámara hacia adelante
@@ -428,13 +476,25 @@ public class PickUp : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             // Si el rayo golpea algo en el mundo dentro de la distancia máxima, establece la posición del objeto al punto de impacto
-            objeto.transform.position = hit.point;
+            if (objeto.transform.tag == "Libro")
+            {
+                objeto.transform.localEulerAngles = new Vector3(90f, 0f, 180f);
+                Vector3 newPos = new Vector3(hit.point.x, hit.point.y + 0.15f, hit.point.z);
+                objeto.transform.position = newPos;
+            }
+            else
+            {
+                objeto.transform.position = hit.point;
+            }
+
         }
         else
         {
             // Si no hay impacto dentro de la distancia máxima, establece la posición del objeto al final del rayo
             objeto.transform.position = ray.GetPoint(maxDistance);
         }
+
+        objeto = null;
     }
 
     void Inspeccionar()
@@ -509,12 +569,12 @@ public class PickUp : MonoBehaviour
         inspeccionando = false;
     }
 
-
     private void verficarCoger()
     {
         if (!cogido)
         {
             soltar.SetActive(false);
+            // echar.SetActive(false);
         }
     }
 }

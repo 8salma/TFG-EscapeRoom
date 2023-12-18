@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public Texture2D puntero;
     public Texture2D punteroVerde;
 
-    [Header("Variables de control")]
+    [Header("Variables de control de lo que tengo")]
     public bool bloquear = false;
     public bool tengoMando = false;
     public bool tengoLlave = false;
