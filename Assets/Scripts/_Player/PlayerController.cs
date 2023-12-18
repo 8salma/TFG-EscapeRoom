@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         // para que el cursor no sea visible mientras se juega
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         characterController = GetComponent<CharacterController>();
     }
 

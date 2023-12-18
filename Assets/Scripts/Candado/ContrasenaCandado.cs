@@ -17,7 +17,6 @@ public class ContrasenaCandado : MonoBehaviour
     private int[] password = new int[4];
 
     [Header("Variables de control")]
-    private bool desbloqueado = false;
     public GameObject tapa;
     bool abierto = false;
 
