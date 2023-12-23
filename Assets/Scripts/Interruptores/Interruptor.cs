@@ -11,11 +11,13 @@ public class Interruptor : MonoBehaviour
     public Material[] material = new Material[3];
     public GameObject diodo;
 
+    private AudioSource sonido;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sonido = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,8 @@ public class Interruptor : MonoBehaviour
 
     public void cambiarEstado()
     {
+        sonido.Play();
+
         cambio++;
         if (cambio == 3)
         {
@@ -38,7 +42,7 @@ public class Interruptor : MonoBehaviour
         // cambio luces y material
         luces[cambio].SetActive(true);
         diodo.GetComponent<Renderer>().material = material[cambio];
-        
+
         if (cambio == 0)
         {
             luces[2].SetActive(false);

@@ -18,11 +18,14 @@ public class Cajon : MonoBehaviour
     Vector3 posAbierto;
     Vector3 posCerrado;
 
+    private AudioSource sonido;
+
     // Start is called before the first frame update
     void Start()
     {
         posCerrado = transform.localPosition;
         posAbierto = new Vector3(transform.localPosition.x, transform.localPosition.y, posCuandoAbre);
+        sonido = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,7 +54,16 @@ public class Cajon : MonoBehaviour
 
     public void AbreCierra()
     {
-        if (!abierto) abriendo = true;
-        else cerrando = true;
+        if (!abierto)
+        {
+            abriendo = true;
+            sonido.Play();
+        }
+
+        else
+        {
+            cerrando = true;
+            sonido.Play();
+        }
     }
 }
