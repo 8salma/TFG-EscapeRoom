@@ -256,26 +256,26 @@ public class PickUp : MonoBehaviour
 
                 else if (hit.transform.tag == "Harina")
                 {
-                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
-                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                    objeto.transform.localPosition = new Vector3(0.998f, -0.651f, 1.216f);
+                    objeto.transform.localEulerAngles = new Vector3(-165.62f, 36.19899f, -186.669f);
                 }
 
                 else if (hit.transform.tag == "Levadura")
                 {
-                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
-                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                    objeto.transform.localPosition = new Vector3(0.998f, -0.651f, 1.216f);
+                    objeto.transform.localEulerAngles = new Vector3(-165.62f, 36.19899f, -186.669f);
                 }
 
                 else if (hit.transform.tag == "Azucar")
                 {
-                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
-                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                    objeto.transform.localPosition = new Vector3(0.998f, -0.651f, 1.216f);
+                    objeto.transform.localEulerAngles = new Vector3(-165.62f, 36.19899f, -186.669f);
                 }
 
                 else if (hit.transform.tag == "Huevos")
                 {
-                    objeto.transform.localPosition = new Vector3(0.95f, -0.76f, 1.13f);
-                    objeto.transform.localEulerAngles = new Vector3(-98.897f, -172.072f, 201.574f);
+                    objeto.transform.localPosition = new Vector3(0.8897552f, -0.7566124f, 1.137059f);
+                    objeto.transform.localEulerAngles = new Vector3(-75.731f, 176.638f, 51.522f);
                 }
 
 
