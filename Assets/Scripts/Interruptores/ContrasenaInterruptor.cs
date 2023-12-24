@@ -7,7 +7,6 @@ public class ContrasenaInterruptor : MonoBehaviour
     public GameObject switch1;
     public GameObject switch2;
     public GameObject switch3;
-    public GameObject luzSecreta;
     public GameObject cajonSecreto;
     private bool hecho = false;
 

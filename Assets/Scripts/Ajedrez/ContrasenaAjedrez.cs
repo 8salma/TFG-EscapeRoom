@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *   Comprobador de la contraseña del ajedrez
+ */
+
 public class ContrasenaAjedrez : MonoBehaviour
 {
 
-    [Header("Jugador")]
+    [Header("Objetos")]
     public GameObject player;
-
-    [Header("Ajedrez")]
     public GameObject ajedrez;
-
-    [Header("Cajon")]
     public GameObject cajon;
-
-    public GameObject linea;
 
     [Header("Camaras")]
     public GameObject camaraAjedrez;
@@ -38,18 +36,14 @@ public class ContrasenaAjedrez : MonoBehaviour
     public float posCuandoAbre;
     Vector3 posAbierto;
     Vector3 posCerrado;
-
-    [Header("Variables de control")]
     private bool cajonDesbloqueado = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         posCerrado = cajon.transform.position;
         posAbierto = new Vector3(cajon.transform.localPosition.x, cajon.transform.localPosition.y, posCuandoAbre);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if ((alfilNegro1.transform.localPosition == new Vector3(2.0f, 0.0f, 7.0f)
@@ -58,8 +52,6 @@ public class ContrasenaAjedrez : MonoBehaviour
             && reinaBlanca.transform.localPosition == new Vector3(0.0f, 0.0f, 2.0f)
             && !cajonDesbloqueado))
         {
-            Debug.Log("AJEDREZ DESBLOQUEADO");
-
             StartCoroutine(AbrirCajon());
         }
     }

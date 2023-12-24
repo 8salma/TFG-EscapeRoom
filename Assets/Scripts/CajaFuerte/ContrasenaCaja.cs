@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *   Controlador contraseña caja fuerte
+ */
+
 public class ContrasenaCaja : MonoBehaviour
 {
     [Header("Variables para la puerta")]
@@ -17,10 +21,9 @@ public class ContrasenaCaja : MonoBehaviour
     [Header("Contraseña correcta")]
     private int[] password = new int[4];
 
-    [Header("variables de control")]
+    [Header("Variables de control")]
     private bool desbloqueado = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         password[0] = 4;
@@ -29,7 +32,6 @@ public class ContrasenaCaja : MonoBehaviour
         password[3] = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (switch1.GetComponent<Dimmer>().numeroActual == password[0]

@@ -3,33 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 /*
- *   Interacciones con el raycasta del jugador
+ *   Controla el raycast
  *   objetos que se cogen (mando tv, llaves, piezas, otros)
- *   tambien comprueba puertas y cajones
+ *   otro tipo de interacción con objetos (puertas, cambios de vista...)
  */
 public class PickUp : MonoBehaviour
 {
     [Header("Objetos")]
     public GameObject player;
     public GameObject objeto;
-    public GameObject jarron;
 
-    [Header("Cámaras")]
-    public GameObject camaraInspeccion;
-    public GameObject camaraPlayer;
+    [Header("Sonidos")]
+    public AudioSource sonidoCoger;
+    public AudioSource sonidoSoltar;
 
     [Header("Canvas")]
     public GameObject interactuar;
     public GameObject soltar;
     public GameObject echar;
 
-    [Header("Inspección")]
-    private GameObject objetoInspeccion;
-    public bool inspeccionando;
-
     [Header("Variables para el raycast")]
     RaycastHit hit;
-    public float distancia = 10f;
+    private float distancia = 10f;
+
+    [Header("Variables de control para la función COGER")]
     public bool cogido = false;
 
     [Header("Outline objeto")]
@@ -43,15 +40,11 @@ public class PickUp : MonoBehaviour
     public GameObject huevos;
     public GameObject azucar;
 
-    // Start is called before the first frame update
     void Start()
     {
         objeto = null;
-        objetoInspeccion = null;
-        inspeccionando = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         verficarCoger();
@@ -101,16 +94,6 @@ public class PickUp : MonoBehaviour
         {
             Soltar();
         }
-        if (Input.GetKeyDown("e"))
-        {
-            Inspeccionar();
-        }
-        if (Input.GetKeyDown("q") && inspeccionando)
-        {
-            DejarInspeccion();
-            objetoInspeccion = null;
-        }
-
     }
 
     void Coger()
@@ -130,6 +113,7 @@ public class PickUp : MonoBehaviour
             && (hit.transform.gameObject.layer == LayerMask.NameToLayer("ObjetoInteractivo") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Llave"))
             && !cogido)
             {
+                sonidoCoger.Play();
                 soltar.SetActive(true);
 
                 // HE COGIDO INGREDIENTE
@@ -278,9 +262,10 @@ public class PickUp : MonoBehaviour
                     objeto.transform.localEulerAngles = new Vector3(-75.731f, 176.638f, 51.522f);
                 }
 
-
                 cogido = true;
             }
+
+            ///////////////////////////
 
             // OBJETOS que NO SE COGEN
 
@@ -348,14 +333,6 @@ public class PickUp : MonoBehaviour
                 highlight = null;
             }
 
-            // Entrar en el modo de vista del reloj
-            if (hit.collider.tag == "reloj")
-            {
-                hit.collider.transform.GetComponent<Reloj>().activa = true;
-                highlight.gameObject.GetComponent<Outline>().enabled = false;
-                highlight = null;
-            }
-
             // Entrar en el modo de vista del portatil
             if (hit.collider.tag == "Portatil")
             {
@@ -380,18 +357,6 @@ public class PickUp : MonoBehaviour
             if (hit.collider.tag == "Interruptor")
             {
                 hit.collider.transform.GetComponent<Interruptor>().cambiarEstado();
-            }
-
-            // Romper el jarron
-            if (hit.collider.tag == "Jarron")
-            {
-                // compruebo si tengo el martillo
-                if (player.GetComponent<PlayerController>().tengoMartillo)
-                {
-                    jarron.GetComponent<Jarron>().romper();
-                    soltar.SetActive(false);
-                    interactuar.SetActive(true);
-                }
             }
 
             // Cofre candado
@@ -495,78 +460,6 @@ public class PickUp : MonoBehaviour
         }
 
         objeto = null;
-    }
-
-    void Inspeccionar()
-    {
-        if (Physics.Raycast(transform.position, transform.forward, out hit, distancia))
-        {
-            // Deseleccionar();
-            // SeleccionarObjeto(hit.transform);
-
-            // He cogido una pieza de ajedrez
-            if (hit.transform.tag == "Pieza")
-            {
-                inspeccionando = true;
-                objetoInspeccion = hit.transform.gameObject;
-
-                // emparentar con la cámara
-                foreach (var c in hit.transform.GetComponentsInChildren<Collider>())
-                {
-                    if (c != null)
-                    {
-                        c.enabled = false;
-                    }
-                }
-
-                foreach (var r in hit.transform.GetComponentsInChildren<Rigidbody>())
-                {
-                    if (r != null)
-                    {
-                        r.isKinematic = true;
-                    }
-                }
-
-                objetoInspeccion.transform.parent = transform;
-
-                // hacemos visible el cursor
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                // Bloquear movimiento del jugador
-                player.GetComponent<PlayerController>().bloquear = true;
-
-                objetoInspeccion.GetComponent<InspeccionObjeto>().enabled = true;
-            }
-        }
-    }
-
-    void DejarInspeccion()
-    {
-        objetoInspeccion.transform.parent = null;
-        foreach (var c in objetoInspeccion.GetComponentsInChildren<Collider>())
-        {
-            if (c != null)
-            {
-                c.enabled = true;
-            }
-        }
-
-        foreach (var r in objetoInspeccion.GetComponentsInChildren<Rigidbody>())
-        {
-            if (r != null)
-            {
-                r.isKinematic = false;
-            }
-        }
-        // hacemos invisible el cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        // Desbloquear movimiento del jugador
-        player.GetComponent<PlayerController>().bloquear = false;
-
-        inspeccionando = false;
     }
 
     private void verficarCoger()

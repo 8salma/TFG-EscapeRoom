@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- *   Scrip encargado de controlar el cambio de cámara para el ajedrez
- *   Gestiona el entrar en "modo ajedrez" con triggers
+ *   Controla cambio de cámara para ajedrez
+ *   Mete las piezas en el tablero
  */
 
 public class Ajedrez : MonoBehaviour
 {
+    [Header("Control para la entrada")]
     public bool activa;
+
+    [Header("Cámaras")]
     public GameObject camaraAjedrez;
     public GameObject camaraJugador;
 
-    // public GameObject controladorCamara;
+    [Header("Objetos")]
     public GameObject player;
     public GameObject ajedrez;
     private GameObject pieza;
 
+    // numero de piezas que voy metiendo
     private int puesto = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -33,7 +36,7 @@ public class Ajedrez : MonoBehaviour
         {
             entrar();
         }
-        // Salir con Q
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             salir();
@@ -42,6 +45,7 @@ public class Ajedrez : MonoBehaviour
 
     public void entrar()
     {
+        // si tengo pieza, la deja en el tablero
         if (player.GetComponent<PlayerController>().tengoPieza)
         {
             pieza = camaraJugador.GetComponent<PickUp>().objeto;
@@ -89,6 +93,8 @@ public class Ajedrez : MonoBehaviour
 
             activa = false;
         }
+
+        // si no tengo pieza, entro en el modo de visión del tablero
         else
         {
             // Cambio de cámara
@@ -108,6 +114,7 @@ public class Ajedrez : MonoBehaviour
         }
     }
 
+    // Salir del modo de visión del tablero
     public void salir()
     {
         // Cambio de cámara

@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movimiento del Personaje")]
     public float walkSpeed = 6.0f;
-    public float runSpeed = 10.0f; // funcion de correr ?
     public float jumpSpeed = 8.0f;
     public float gravedad = 20.0f;
 
@@ -27,8 +26,6 @@ public class PlayerController : MonoBehaviour
     public float minRotation = -65.0f;
     public float maxRotation = 60.0f;
     float h_mouse, v_mouse;
-    public Texture2D puntero;
-    public Texture2D punteroVerde;
 
     [Header("Variables de control de lo que tengo")]
     public bool bloquear = false;
@@ -38,11 +35,12 @@ public class PlayerController : MonoBehaviour
     public bool tengoMartillo = false;
     public bool tengoIngrediente = false;
     public string tagLlave;
+
     private Vector3 move = Vector3.zero;
 
     void Start()
     {
-        // para que el cursor no sea visible mientras se juega
+        // cursor invisible
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         characterController = GetComponent<CharacterController>();
