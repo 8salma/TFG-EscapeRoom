@@ -40,10 +40,29 @@ public class ContrasenaCaja : MonoBehaviour
         && switch4.GetComponent<Dimmer>().numeroActual == password[3]
         && !desbloqueado)
         {
-            Quaternion targetRotation = Quaternion.Euler(-90f,0f, 105f);
-            puerta.transform.localRotation = Quaternion.Slerp(puerta.transform.localRotation, targetRotation, velocidad * Time.deltaTime);
+            StartCoroutine(AbrirCaja());
+        }
 
-            // desbloqueado = true;
+    }
+
+    IEnumerator AbrirCaja()
+    {
+        // Indica que ya se está ejecutando la animación de apertura
+        desbloqueado = true;
+
+        // Define el ángulo objetivo de rotación (abrir el candado)
+        Quaternion targetRotation = Quaternion.Euler(-90f, 0f, 105f);
+
+        float elapsedTime = 0f;
+        float duration = 10f; // Duración de la animación en segundos
+
+        while (elapsedTime < duration)
+        {
+            // Incrementa el tiempo transcurrido
+            elapsedTime += Time.deltaTime;
+
+            puerta.transform.localRotation = Quaternion.Slerp(puerta.transform.localRotation, targetRotation, elapsedTime / duration);
+            yield return null; // Espera hasta el siguiente frame
         }
 
     }

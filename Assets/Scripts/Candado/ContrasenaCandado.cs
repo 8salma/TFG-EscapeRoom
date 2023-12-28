@@ -47,8 +47,6 @@ public class ContrasenaCandado : MonoBehaviour
             && switch4.GetComponent<SwitchRueda>().numeroActual == password[3]
             && !abierto) // Comprueba si el candado no está abierto
         {
-            Debug.Log("CANDADO DESBLOQUEADO");
-
             StartCoroutine(AbrirCandado());
         }
     }

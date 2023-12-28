@@ -12,6 +12,7 @@ public class PickUp : MonoBehaviour
     [Header("Objetos")]
     public GameObject player;
     public GameObject objeto;
+    public GameObject puertaNevera;
 
     [Header("Sonidos")]
     public AudioSource sonidoCoger;
@@ -24,7 +25,7 @@ public class PickUp : MonoBehaviour
 
     [Header("Variables para el raycast")]
     RaycastHit hit;
-    private float distancia = 10f;
+    private float distancia = 1.7f;
 
     [Header("Variables de control para la función COGER")]
     public bool cogido = false;
@@ -108,7 +109,7 @@ public class PickUp : MonoBehaviour
             && hit.transform.tag != "Dimmer" && hit.collider.tag != "PuertaMuebleAlto" && hit.collider.tag != "PuertaImanes"
             && hit.transform.tag != "TableroAjedrez" && hit.transform.tag != "Interruptor" && hit.transform.tag != "TV"
             && hit.transform.tag != "Portatil" && hit.transform.tag != "Candado" && hit.transform.tag != "Jarron"
-            && hit.transform.tag != "Cofre" && hit.transform.tag != "Nota" && hit.transform.tag != "Cuenco"
+            && hit.transform.tag != "Cofre" && hit.transform.tag != "Nota" && hit.transform.tag != "Cuenco" && hit.transform.tag != "CandadoNevera"
 
             && (hit.transform.gameObject.layer == LayerMask.NameToLayer("ObjetoInteractivo") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Llave"))
             && !cogido)
@@ -290,6 +291,23 @@ public class PickUp : MonoBehaviour
                     cogido = false;
                 }
                 hit.collider.transform.GetComponent<PuertaNevera>().ChangeDoorState();
+            }
+
+            // Abrir puerta nevera
+            if (hit.collider.tag == "CandadoNevera")
+            {
+                // compruebo si tengo la llave de la nevera
+                if (objeto != null && objeto.transform.tag == "CerraduraNevera")
+                {
+                   puertaNevera.GetComponent<PuertaNevera>().bloqueada = false;
+
+                    // destruimos la llave ya usada
+                    Destroy(objeto);
+                    objeto = null;
+                    player.GetComponent<PlayerController>().tengoLlave = false;
+                    cogido = false;
+                }
+                 puertaNevera.GetComponent<PuertaNevera>().ChangeDoorState();
             }
 
             // Abrir puerta mueble arriba en la cocina
