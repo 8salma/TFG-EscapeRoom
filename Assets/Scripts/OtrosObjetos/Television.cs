@@ -9,18 +9,6 @@ public class Television : MonoBehaviour
     private int sigCanal = 0;
     private bool apagar = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CambioCanal()
     {
         if (apagar)
@@ -44,35 +32,4 @@ public class Television : MonoBehaviour
             }
         }
     }
-
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Papaya")
-        {
-            // Debug.Log("Puedo encender pero tengo mando??" + tengoMando);
-            activa = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Papaya")
-        {
-            activa = false;
-        }
-    }
-
-    private void Encender()
-    {
-        encendido = true;
-        pantalla.SetActive(true);
-    }
-
-    private void Apagar()
-    {
-        encendido = false;
-        pantalla.SetActive(false);
-    }
-    */
 }

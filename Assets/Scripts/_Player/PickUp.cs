@@ -469,7 +469,6 @@ public class PickUp : MonoBehaviour
             {
                 objeto.transform.position = hit.point;
             }
-
         }
         else
         {
