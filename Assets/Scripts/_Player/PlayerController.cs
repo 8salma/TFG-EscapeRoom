@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public bool tengoIngrediente = false;
     public string tagLlave;
 
+    [Header("Menú de pausa")]
+    public GameObject pausa;
+
     private Vector3 move = Vector3.zero;
 
     void Start()
@@ -48,6 +51,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // pausar con la tecla escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausa.SetActive(true);
+            Time.timeScale = 0;
+
+            // hacemos visible el cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            bloquear = true;
+        }
+
         if (!bloquear)
         {
             RotacionCamara();

@@ -10,7 +10,6 @@ public class ContrasenaCaja : MonoBehaviour
 {
     [Header("Variables para la puerta")]
     public GameObject puerta;
-    private float velocidad = 1f;
 
     [Header("Ruedas de la caja")]
     public GameObject switch1;
