@@ -41,6 +41,9 @@ public class PickUp : MonoBehaviour
     public GameObject huevos;
     public GameObject azucar;
 
+    [Header("Masa")]
+    public GameObject masa;
+
     void Start()
     {
         objeto = null;
@@ -299,7 +302,7 @@ public class PickUp : MonoBehaviour
                 // compruebo si tengo la llave de la nevera
                 if (objeto != null && objeto.transform.tag == "CerraduraNevera")
                 {
-                   puertaNevera.GetComponent<PuertaNevera>().bloqueada = false;
+                    puertaNevera.GetComponent<PuertaNevera>().bloqueada = false;
 
                     // destruimos la llave ya usada
                     Destroy(objeto);
@@ -307,7 +310,7 @@ public class PickUp : MonoBehaviour
                     player.GetComponent<PlayerController>().tengoLlave = false;
                     cogido = false;
                 }
-                 puertaNevera.GetComponent<PuertaNevera>().ChangeDoorState();
+                puertaNevera.GetComponent<PuertaNevera>().ChangeDoorState();
             }
 
             // Abrir puerta mueble arriba en la cocina
@@ -409,7 +412,10 @@ public class PickUp : MonoBehaviour
                 if (player.GetComponent<PlayerController>().tengoIngrediente)
                 {
                     hit.collider.transform.GetComponent<Cuenco>().contador++;
-
+                    if (hit.collider.transform.GetComponent<Cuenco>().contador == 1)
+                    {
+                        masa.SetActive(true);
+                    }
                     // destruimos el ingrediente
                     Destroy(objeto);
                     objeto = null;

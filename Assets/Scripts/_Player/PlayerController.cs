@@ -39,6 +39,10 @@ public class PlayerController : MonoBehaviour
     [Header("Menú de pausa")]
     public GameObject pausa;
 
+    [Header("Variables para controlar si el juego ha acabado")]
+    public GameObject cuenco;
+    bool juegoTerminado;
+
     private Vector3 move = Vector3.zero;
 
     void Start()
@@ -51,8 +55,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        juegoTerminado = cuenco.GetComponent<Cuenco>().terminado;
+
         // pausar con la tecla escape
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !juegoTerminado)
         {
             pausa.SetActive(true);
             Time.timeScale = 0;
