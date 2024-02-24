@@ -82,12 +82,6 @@ public class PlayerController : MonoBehaviour
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             move = transform.TransformDirection(move) * walkSpeed;
-
-            // Salto
-            if (Input.GetKey(KeyCode.Space))
-            {
-                move.y = jumpSpeed;
-            }
         }
 
         move.y -= gravedad * Time.deltaTime;

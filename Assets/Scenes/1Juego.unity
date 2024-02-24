@@ -22050,12 +22050,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39fa40551b173d4e9655148ba079593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4.7
+  walkSpeed: 4
   jumpSpeed: 5
   gravedad: 20
   cam: {fileID: 963194227}
-  mouseHorizontal: 2
-  mouseVertical: 2
+  mouseHorizontal: 1.5
+  mouseVertical: 1.5
   minRotation: -65
   maxRotation: 60
   bloquear: 0
@@ -29220,17 +29220,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 276.10782
+      value: 406.90005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 276.10788
+      value: 406.90015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 206.4512
+      value: 304.2471
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
@@ -29240,7 +29240,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.73048013
+      value: -0.697
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06409d0df4cecb64b8615cef101798be,
         type: 3}
@@ -50748,8 +50748,8 @@ GameObject:
   - component: {fileID: 7521648900899709939}
   - component: {fileID: 4762288286093054664}
   - component: {fileID: 8967670403076510516}
-  - component: {fileID: 6394921334963965456}
   - component: {fileID: 6394921334963965457}
+  - component: {fileID: 6394921334963965456}
   m_Layer: 11
   m_Name: defaultMaterial.005
   m_TagString: Huevos
@@ -50757,8 +50757,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &6394921334963965456
-MeshCollider:
+--- !u!65 &6394921334963965456
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -50767,10 +50767,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300247748951498549, guid: f5130bd32e00ad844be923109b6ae1de, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.25230297, y: 0.20156808, z: 0.19207503}
+  m_Center: {x: 0.00015540421, y: 0.023129102, z: 0.09596277}
 --- !u!54 &6394921334963965457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52766,7 +52765,7 @@ GameObject:
   - component: {fileID: 67145930781473169}
   - component: {fileID: 1779234220487687361}
   - component: {fileID: 6933406880779551833}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: mesaSofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
